@@ -1,0 +1,102 @@
+[
+  {
+    "direccion_viento": "SE",
+    "temperatura": 51.00490035306831,
+    "humedad": 32
+  },
+  {
+    "direccion_viento": "NW",
+    "temperatura": 56.47904670268041,
+    "humedad": 36
+  },
+  {
+    "direccion_viento": "NE",
+    "temperatura": 63.50139710444756,
+    "humedad": 48
+  },
+  {
+    "direccion_viento": "S",
+    "temperatura": 49.79242851813468,
+    "humedad": 72
+  },
+  {
+    "direccion_viento": "W",
+    "temperatura": 45.56549121991968,
+    "humedad": 45
+  },
+  {
+    "direccion_viento": "NE",
+    "temperatura": 52.235641424251114,
+    "humedad": 53
+  },
+  {
+    "direccion_viento": "NW",
+    "temperatura": 50.49054157871676,
+    "humedad": 84
+  },
+  {
+    "direccion_viento": "SE",
+    "temperatura": 39.02528547705488,
+    "humedad": 50
+  },
+  {
+    "direccion_viento": "SE",
+    "temperatura": 51.36584338685913,
+    "humedad": 47
+  },
+  {
+    "direccion_viento": "N",
+    "temperatura": 55.355173310505016,
+    "humedad": 55
+  },
+  {
+    "direccion_viento": "N",
+    "temperatura": 48.377573556837994,
+    "humedad": 56
+  },
+  {
+    "direccion_viento": "E",
+    "temperatura": 43.56256653000107,
+    "humedad": 35
+  },
+  {
+    "direccion_viento": "NW",
+    "temperatura": 37.13647331137909,
+    "humedad": 66
+  },
+  {
+    "direccion_viento": "W",
+    "temperatura": 37.68323870509222,
+    "humedad": 60
+  },
+  {
+    "direccion_viento": "SE",
+    "temperatura": 52.02395976287511,
+    "humedad": 60
+  },
+  {
+    "direccion_viento": "W",
+    "temperatura": 33.3917115842775,
+    "humedad": 24
+  },
+  {
+    "direccion_viento": "NW",
+    "temperatura": 48.7846209292526,
+    "humedad": 38
+  },
+  {
+    "direccion_viento": "E",
+    "temperatura": 48.5072920146555,
+    "humedad": 59
+  },
+  {
+    "direccion_viento": "N",
+    "temperatura": 29.506885977841804,
+    "humedad": 30
+  },
+  {
+    "direccion_viento": "N",
+    "temperatura": 50.48827586477165,
+    "humedad": 30
+  }
+]
