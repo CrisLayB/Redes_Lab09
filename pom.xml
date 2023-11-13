@@ -33,9 +33,21 @@
 	  </dependency>
 
     <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-classic</artifactId>
+        <version>1.2.6</version> <!-- Reemplaza con la versión más reciente -->
+    </dependency>
+
+    <dependency>
         <groupId>org.json</groupId>
         <artifactId>json</artifactId>
         <version>20231013</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.knowm.xchart</groupId>
+        <artifactId>xchart</artifactId>
+        <version>3.8.0</version>
     </dependency>
   </dependencies>
 

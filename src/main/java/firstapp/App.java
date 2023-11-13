@@ -23,24 +23,9 @@ import org.json.JSONObject;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class App {
-
-    private static List<JSONObject> generateData(int intervals){
-        List<JSONObject> jsonList = new ArrayList<>();
-
-        for(int i = 0; i < intervals; i++){
-            JSONObject json = new JSONObject();
-            json.put("temperatura", Sensors.thermometer());
-            json.put("humedad", Sensors.hygrometer());
-            json.put("direccion_viento", Sensors.windDirection());
-            jsonList.add(json);
-        }
-        
-        return jsonList;
-    }
 
     private static String saveListoToFileJson(List<JSONObject> jsonList, String fileName){
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
@@ -55,7 +40,7 @@ public class App {
     
     public static void main( String[] args ) {
         // Create a loop for Generate Data random
-        List<JSONObject> jsonList = generateData(20);
+        List<JSONObject> jsonList = Sensors.generateJsonListData(20);
         String result = saveListoToFileJson(jsonList, "./sensorsOutput.json");
         System.out.println(result);
     }
