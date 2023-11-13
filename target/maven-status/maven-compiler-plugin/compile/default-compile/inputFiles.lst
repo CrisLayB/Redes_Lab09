@@ -1,4 +1,5 @@
 /home/crislay/Documents/GitHub/Redes_Lab09/src/main/java/firstapp/Sensors.java
 /home/crislay/Documents/GitHub/Redes_Lab09/src/main/java/firstapp/App.java
 /home/crislay/Documents/GitHub/Redes_Lab09/src/main/java/firstapp/ConsumerKafka.java
+/home/crislay/Documents/GitHub/Redes_Lab09/src/main/java/firstapp/PayloadCodec.java
 /home/crislay/Documents/GitHub/Redes_Lab09/src/main/java/firstapp/ProducerKafka.java

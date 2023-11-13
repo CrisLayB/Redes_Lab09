@@ -25,14 +25,14 @@ public class ConsumerKafka {
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         props.put(ConsumerConfig.GROUP_ID_CONFIG, "foo2");
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
-        props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
+        props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.ByteArrayDeserializer");
         return props;
     }
 
     // ? Para correr el programa segun la documentación:
     // mvn clean install exec:java -Dexec.mainClass=firstapp.ConsumerKafka -Djava.awt.headless=true
     public static void main(String[] args) {
-        Consumer<String, String> consumer = new KafkaConsumer<>(getKafkaProperties());
+        Consumer<String, byte[]> consumer = new KafkaConsumer<>(getKafkaProperties());
 
         consumer.subscribe(Arrays.asList(TOPIC));
 
@@ -46,17 +46,16 @@ public class ConsumerKafka {
 
         try {
             while (true) {                
-                ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
+                ConsumerRecords<String, byte[]> records = consumer.poll(Duration.ofMillis(100));
                 
                 records.forEach(record -> {
-                    String message = record.value();
-                    JSONObject json = new JSONObject(message);
+                    byte[] encodedData = record.value();
+                    JSONObject json = PayloadCodec.decode(encodedData);
 
                     listTemp.add(json.getDouble("temperatura"));
                     listHume.add(json.getInt("humedad"));
                     listWind.add(json.getString("direccion_viento"));
 
-                    System.out.println("\n===> " + message + "\n");
                     updateChart(chart, listTemp, listHume, listWind);
                 });                                
             }

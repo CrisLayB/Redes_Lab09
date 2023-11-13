@@ -17,20 +17,21 @@ public class ProducerKafka {
         props.put("bootstrap.servers", bootstrapServers);
         props.put("client.id", tenancyName);
         props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
-        props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+        props.put("value.serializer", "org.apache.kafka.common.serialization.ByteArraySerializer");
         return props;
     }
 
     // ? Para correr el programa segun la documentación:
     // mvn clean install exec:java -Dexec.mainClass=firstapp.ProducerKafka
     public static void main(String args[]) {        
-        Producer<String, String> producer = new KafkaProducer<>(getKafkaProperties());
+        Producer<String, byte[]> producer = new KafkaProducer<>(getKafkaProperties());
 
         try {
             while (true) {
                 JSONObject data = Sensors.generateJsonData();
+                byte[] encodedData = PayloadCodec.encode(data);
                 String key = "sensor1";
-                producer.send(new ProducerRecord<>(TOPIC, key, data.toString()));                
+                producer.send(new ProducerRecord<>(TOPIC, key, encodedData));
                 Thread.sleep(Sensors.randomIntNumber(15000, 30000));
             }
         } catch (InterruptedException e) {
